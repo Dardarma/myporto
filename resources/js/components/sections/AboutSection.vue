@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import SectionTitle from '@/components/ui/SectionTitle.vue';
 import TabButton from '@/components/ui/TabButton.vue';
 import { computed, ref } from 'vue';
 

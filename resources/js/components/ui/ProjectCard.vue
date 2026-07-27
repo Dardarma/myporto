@@ -17,7 +17,7 @@ const activeImage = ref(0);
 const images = computed(() => {
     const values = props.project.images?.length
         ? props.project.images
-        : [props.project.thumbnail || '/images/project/project_1_1.png'];
+        : [props.project.thumbnail || '/images/project/project_1_1.webp'];
 
     return [...new Set(values.filter(Boolean))];
 });

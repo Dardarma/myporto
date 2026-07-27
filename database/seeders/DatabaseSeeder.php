@@ -23,12 +23,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::query()->updateOrCreate([
-            'email' => 'rizkidarma345@gmail.com',
-        ], [
-            'name' => 'Kiki',
-            'password' => Hash::make('Kiki142004'),
-        ]);
+        if (filled(env('ADMIN_EMAIL')) && filled(env('ADMIN_PASSWORD'))) {
+            User::query()->updateOrCreate([
+                'email' => env('ADMIN_EMAIL'),
+            ], [
+                'name' => env('ADMIN_NAME', 'Administrator'),
+                'password' => Hash::make(env('ADMIN_PASSWORD')),
+            ]);
+        }
 
         Profile::query()->updateOrCreate([
             'id' => 1,
@@ -37,7 +39,7 @@ class DatabaseSeeder extends Seeder
             'headline' => 'Personal Portfolio',
             'hero_greeting' => 'HI I AM',
             'hero_slogan' => "It's ALL ABOUT E'MEEEH",
-            'profile_image' => '/images/component/Profile.png',
+            'profile_image' => '/images/component/Profile.webp',
             'email' => 'hello@example.com',
             'instagram_url' => '#',
             'linkedin_url' => '#',
@@ -80,7 +82,7 @@ class DatabaseSeeder extends Seeder
             'end_year' => null,
             'is_current' => true,
             'description' => 'Learning software fundamentals, web development, databases, and practical information system development.',
-            'image' => '/images/education/Gambar%20WhatsApp%202025-11-25%20pukul%2011.26.52_79f73091.jpg',
+            'image' => '/images/education/Gambar%20WhatsApp%202025-11-25%20pukul%2011.26.52_79f73091.webp',
             'sort_order' => 1,
         ]);
 
@@ -94,16 +96,16 @@ class DatabaseSeeder extends Seeder
             'is_current' => false,
             'location' => 'Lamongan',
             'description' => 'Lorem ipsum',
-            'logo' => '/images/company/logo.png',
+            'logo' => '/images/company/logo.webp',
             'sort_order' => 1,
         ]);
 
         collect([
-            ['title' => 'Frontend Development Fundamentals', 'issuer' => 'Learning Partner', 'year' => 2024, 'image' => '/images/certificate/Certificate_1.jpg', 'sort_order' => 1],
-            ['title' => 'Laravel Web Application', 'issuer' => 'Tech Course', 'year' => 2024, 'image' => '/images/certificate/Certificate_2.jpg', 'sort_order' => 2],
-            ['title' => 'Database and API Practice', 'issuer' => 'Campus Program', 'year' => 2025, 'image' => '/images/certificate/Certificate_3.jpg', 'sort_order' => 3],
-            ['title' => 'UI Design Exploration', 'issuer' => 'Creative Class', 'year' => 2025, 'image' => '/images/certificate/Certificate_4.jpg', 'sort_order' => 4],
-            ['title' => 'Cultural Documentation', 'issuer' => 'Personal Archive', 'year' => 2026, 'image' => '/images/certificate/Certificate_1.jpg', 'sort_order' => 5],
+            ['title' => 'Frontend Development Fundamentals', 'issuer' => 'Learning Partner', 'year' => 2024, 'image' => '/images/certificate/Certificate_1.webp', 'sort_order' => 1],
+            ['title' => 'Laravel Web Application', 'issuer' => 'Tech Course', 'year' => 2024, 'image' => '/images/certificate/Certificate_2.webp', 'sort_order' => 2],
+            ['title' => 'Database and API Practice', 'issuer' => 'Campus Program', 'year' => 2025, 'image' => '/images/certificate/Certificate_3.webp', 'sort_order' => 3],
+            ['title' => 'UI Design Exploration', 'issuer' => 'Creative Class', 'year' => 2025, 'image' => '/images/certificate/Certificate_4.webp', 'sort_order' => 4],
+            ['title' => 'Cultural Documentation', 'issuer' => 'Personal Archive', 'year' => 2026, 'image' => '/images/certificate/Certificate_1.webp', 'sort_order' => 5],
         ])->each(fn (array $certificate) => Certificate::query()->updateOrCreate([
             'title' => $certificate['title'],
         ], $certificate + ['is_active' => true]));
@@ -115,7 +117,7 @@ class DatabaseSeeder extends Seeder
                 'category' => 'IT',
                 'description' => 'Learning platform concept with course materials, student access, and practical dashboard workflows.',
                 'detail' => 'A static preview for an e-learning idea focused on course discovery, learner progress, admin-friendly content management, and practical dashboard flows that can later be connected to Laravel APIs.',
-                'thumbnail' => '/images/project/project_1_1.png',
+                'thumbnail' => '/images/project/project_1_1.webp',
                 'stack' => ['Laravel', 'Vue', 'MySQL'],
                 'sort_order' => 1,
             ],
@@ -125,7 +127,7 @@ class DatabaseSeeder extends Seeder
                 'category' => 'IT',
                 'description' => 'Mentoring web concept with Laravel API, Vue interface, token authentication, and guided sessions.',
                 'detail' => 'A mentoring platform concept for arranging sessions, protecting user areas with token authentication, and separating frontend interaction from Laravel API responsibilities.',
-                'thumbnail' => '/images/project/project_1_2.png',
+                'thumbnail' => '/images/project/project_1_2.webp',
                 'stack' => ['Laravel API', 'Vue', 'JWT'],
                 'sort_order' => 2,
             ],
@@ -135,7 +137,7 @@ class DatabaseSeeder extends Seeder
                 'category' => 'IT',
                 'description' => 'Content management dashboard for structured publishing and admin-side data management.',
                 'detail' => 'A CMS-style dashboard concept with structured content editing, admin navigation, reusable layout sections, and a path toward CRUD-backed Laravel modules.',
-                'thumbnail' => '/images/project/project_2_1.png',
+                'thumbnail' => '/images/project/project_2_1.webp',
                 'stack' => ['Laravel', 'AdminLTE'],
                 'sort_order' => 3,
             ],
@@ -145,7 +147,7 @@ class DatabaseSeeder extends Seeder
                 'category' => 'Non-IT',
                 'description' => 'Short-form cultural writing that documents heritage, local memory, and everyday interpretation.',
                 'detail' => 'A writing collection concept for cultural notes, local history, observation, and reflective interpretation outside software development work.',
-                'thumbnail' => '/images/component/Pattern.jpg',
+                'thumbnail' => '/images/component/Pattern.webp',
                 'stack' => [],
                 'sort_order' => 4,
             ],
@@ -155,7 +157,7 @@ class DatabaseSeeder extends Seeder
                 'category' => 'Non-IT',
                 'description' => 'Personal essays about learning, discipline, identity, and small observations from daily life.',
                 'detail' => 'A personal archive for reflection pieces, opinions, and essays that help preserve thought process, growth, and everyday lessons.',
-                'thumbnail' => '/images/project/project_2_2.png',
+                'thumbnail' => '/images/project/project_2_2.webp',
                 'stack' => [],
                 'sort_order' => 5,
             ],
@@ -165,7 +167,7 @@ class DatabaseSeeder extends Seeder
                 'category' => 'Non-IT',
                 'description' => 'Visual notes and written documentation from organization activities and collaborative events.',
                 'detail' => 'A documentation concept for organization activities, event memories, visual records, and collaborative experience outside formal project work.',
-                'thumbnail' => '/images/component/Profile.png',
+                'thumbnail' => '/images/component/Profile.webp',
                 'stack' => [],
                 'sort_order' => 6,
             ],
@@ -192,12 +194,12 @@ class DatabaseSeeder extends Seeder
         });
 
         collect([
-            ['title' => 'Profile Portrait', 'description' => 'Portrait image used as the main visual identity for the portfolio hero.', 'image' => '/images/component/Profile.png', 'category' => 'Profile', 'sort_order' => 1],
-            ['title' => 'Ethnic Pattern', 'description' => 'Background motif that gives the page its ethnic and personal visual character.', 'image' => '/images/component/Pattern.jpg', 'category' => 'Visual', 'sort_order' => 2],
-            ['title' => 'Project Preview 1', 'description' => 'Interface preview from an IT project archive.', 'image' => '/images/project/project_1_1.png', 'category' => 'Project', 'sort_order' => 3],
-            ['title' => 'Project Preview 2', 'description' => 'Second project image used as portfolio documentation.', 'image' => '/images/project/project_1_2.png', 'category' => 'Project', 'sort_order' => 4],
-            ['title' => 'Project Preview 3', 'description' => 'Dashboard-style visual documentation for project presentation.', 'image' => '/images/project/project_2_1.png', 'category' => 'Project', 'sort_order' => 5],
-            ['title' => 'Project Preview 4', 'description' => 'Additional project image for visual context and archive.', 'image' => '/images/project/project_2_2.png', 'category' => 'Project', 'sort_order' => 6],
+            ['title' => 'Profile Portrait', 'description' => 'Portrait image used as the main visual identity for the portfolio hero.', 'image' => '/images/component/Profile.webp', 'category' => 'Profile', 'sort_order' => 1],
+            ['title' => 'Ethnic Pattern', 'description' => 'Background motif that gives the page its ethnic and personal visual character.', 'image' => '/images/component/Pattern.webp', 'category' => 'Visual', 'sort_order' => 2],
+            ['title' => 'Project Preview 1', 'description' => 'Interface preview from an IT project archive.', 'image' => '/images/project/project_1_1.webp', 'category' => 'Project', 'sort_order' => 3],
+            ['title' => 'Project Preview 2', 'description' => 'Second project image used as portfolio documentation.', 'image' => '/images/project/project_1_2.webp', 'category' => 'Project', 'sort_order' => 4],
+            ['title' => 'Project Preview 3', 'description' => 'Dashboard-style visual documentation for project presentation.', 'image' => '/images/project/project_2_1.webp', 'category' => 'Project', 'sort_order' => 5],
+            ['title' => 'Project Preview 4', 'description' => 'Additional project image for visual context and archive.', 'image' => '/images/project/project_2_2.webp', 'category' => 'Project', 'sort_order' => 6],
         ])->each(fn (array $galleryItem) => GalleryItem::query()->updateOrCreate([
             'title' => $galleryItem['title'],
         ], $galleryItem + [
@@ -206,7 +208,7 @@ class DatabaseSeeder extends Seeder
         ]));
 
         collect([
-            ['key' => 'pattern_image', 'value' => '/images/component/Pattern.jpg', 'type' => 'image'],
+            ['key' => 'pattern_image', 'value' => '/images/component/Pattern.webp', 'type' => 'image'],
             ['key' => 'footer_heading', 'value' => "Let's connect and build something thoughtful.", 'type' => 'string'],
         ])->each(fn (array $setting) => SiteSetting::query()->updateOrCreate([
             'key' => $setting['key'],

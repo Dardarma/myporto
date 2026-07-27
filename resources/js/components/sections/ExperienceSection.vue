@@ -24,7 +24,7 @@ const fallbackExperiences = [
         isCurrent: false,
         location: 'Lamongan',
         description: 'Lorem ipsum',
-        logo: '/images/company/logo.png',
+        logo: '/images/company/logo.webp',
     },
 ];
 
@@ -49,7 +49,7 @@ const formatPeriod = (experience: (typeof fallbackExperiences)[number]) => {
                 class="mx-auto flex max-w-6xl flex-col items-center gap-6 rounded-[8px] bg-[rgba(70,70,78,0.88)] p-6 text-center shadow-2xl shadow-black/25 backdrop-blur sm:flex-row sm:text-left md:gap-8 md:p-9"
             >
                 <div class="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#d9d9d9] p-4 md:h-32 md:w-32">
-                    <img :src="experience.logo || '/images/company/logo.png'" :alt="experience.companyName" class="h-full w-full object-contain" />
+                    <img :src="experience.logo || '/images/company/logo.webp'" :alt="experience.companyName" class="h-full w-full object-contain" />
                 </div>
                 <div>
                     <h3 class="font-serif text-2xl font-semibold leading-tight text-white md:text-3xl">

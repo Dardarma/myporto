@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
     <div class="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-[#1c1c20] p-6 text-white md:p-10">
-        <div class="absolute inset-0 opacity-20 [background-image:url('/images/component/Pattern.jpg')] [background-size:620px_auto] [background-position:center]"></div>
+        <div class="absolute inset-0 opacity-20 [background-image:url('/images/component/Pattern.webp')] [background-size:620px_auto] [background-position:center]"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(201,178,124,0.22),transparent_34%),linear-gradient(180deg,rgba(28,28,32,0.7),#1c1c20)]"></div>
 
         <div class="relative z-10 w-full max-w-md rounded-[8px] border border-white/10 bg-white/10 p-6 shadow-2xl shadow-black/30 backdrop-blur-md md:p-8">

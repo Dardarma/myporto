@@ -14,12 +14,12 @@ const props = defineProps<{
 }>();
 
 const fallbackGallery = [
-    { image: '/images/component/Profile.png', title: 'Profile Portrait', description: 'Portrait image used as the main visual identity for the portfolio hero.' },
-    { image: '/images/component/Pattern.jpg', title: 'Ethnic Pattern', description: 'Background motif that gives the page its ethnic and personal visual character.' },
-    { image: '/images/project/project_1_1.png', title: 'Project Preview 1', description: 'Interface preview from an IT project archive.' },
-    { image: '/images/project/project_1_2.png', title: 'Project Preview 2', description: 'Second project image used as portfolio documentation.' },
-    { image: '/images/project/project_2_1.png', title: 'Project Preview 3', description: 'Dashboard-style visual documentation for project presentation.' },
-    { image: '/images/project/project_2_2.png', title: 'Project Preview 4', description: 'Additional project image for visual context and archive.' },
+    { image: '/images/component/Profile.webp', title: 'Profile Portrait', description: 'Portrait image used as the main visual identity for the portfolio hero.' },
+    { image: '/images/component/Pattern.webp', title: 'Ethnic Pattern', description: 'Background motif that gives the page its ethnic and personal visual character.' },
+    { image: '/images/project/project_1_1.webp', title: 'Project Preview 1', description: 'Interface preview from an IT project archive.' },
+    { image: '/images/project/project_1_2.webp', title: 'Project Preview 2', description: 'Second project image used as portfolio documentation.' },
+    { image: '/images/project/project_2_1.webp', title: 'Project Preview 3', description: 'Dashboard-style visual documentation for project presentation.' },
+    { image: '/images/project/project_2_2.webp', title: 'Project Preview 4', description: 'Additional project image for visual context and archive.' },
 ];
 
 const gallery = computed(() => (props.items?.length ? props.items : fallbackGallery));

@@ -283,7 +283,7 @@ html {
     overflow: hidden;
     background-image:
         linear-gradient(rgba(15, 15, 19, 0.58), rgba(15, 15, 19, 0.68)),
-        url('/images/component/Pattern.jpg');
+        url('/images/component/Pattern.webp');
     background-position: center;
     background-repeat: repeat;
     background-size: 780px auto;
@@ -359,7 +359,7 @@ html {
     height: min(42vh, 430px);
     pointer-events: none;
     content: '';
-    background-image: url('/images/component/Pattern.jpg');
+    background-image: url('/images/component/Pattern.webp');
     background-position: top center;
     background-repeat: repeat;
     background-size: 780px auto;

@@ -24,7 +24,7 @@ const fallbackEducations = [
         endYear: null,
         isCurrent: true,
         description: 'Learning software fundamentals, web development, databases, and practical information system development.',
-        image: '/images/education/Gambar%20WhatsApp%202025-11-25%20pukul%2011.26.52_79f73091.jpg',
+        image: '/images/education/Gambar%20WhatsApp%202025-11-25%20pukul%2011.26.52_79f73091.webp',
     },
 ];
 
@@ -52,7 +52,7 @@ const yearRange = (education: (typeof fallbackEducations)[number]) => {
             >
                 <div class="min-h-[260px] bg-[#d9d9d9] p-3 md:min-h-[360px]">
                     <img
-                        :src="education.image || '/images/education/Gambar%20WhatsApp%202025-11-25%20pukul%2011.26.52_79f73091.jpg'"
+                        :src="education.image || '/images/education/Gambar%20WhatsApp%202025-11-25%20pukul%2011.26.52_79f73091.webp'"
                         :alt="education.institution"
                         class="h-full w-full rounded-[6px] object-cover"
                     />

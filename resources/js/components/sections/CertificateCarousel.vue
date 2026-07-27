@@ -18,11 +18,11 @@ type Certificate = {
 const props = defineProps<{ certificates?: Certificate[] }>();
 
 const fallbackCertificates = [
-    { image: '/images/certificate/Certificate_1.jpg', title: 'Frontend Development Fundamentals', issuer: 'Learning Partner', year: '2024' },
-    { image: '/images/certificate/Certificate_2.jpg', title: 'Laravel Web Application', issuer: 'Tech Course', year: '2024' },
-    { image: '/images/certificate/Certificate_3.jpg', title: 'Database and API Practice', issuer: 'Campus Program', year: '2025' },
-    { image: '/images/certificate/Certificate_4.jpg', title: 'UI Design Exploration', issuer: 'Creative Class', year: '2025' },
-    { image: '/images/certificate/Certificate_1.jpg', title: 'Cultural Documentation', issuer: 'Personal Archive', year: '2026' },
+    { image: '/images/certificate/Certificate_1.webp', title: 'Frontend Development Fundamentals', issuer: 'Learning Partner', year: '2024' },
+    { image: '/images/certificate/Certificate_2.webp', title: 'Laravel Web Application', issuer: 'Tech Course', year: '2024' },
+    { image: '/images/certificate/Certificate_3.webp', title: 'Database and API Practice', issuer: 'Campus Program', year: '2025' },
+    { image: '/images/certificate/Certificate_4.webp', title: 'UI Design Exploration', issuer: 'Creative Class', year: '2025' },
+    { image: '/images/certificate/Certificate_1.webp', title: 'Cultural Documentation', issuer: 'Personal Archive', year: '2026' },
 ];
 
 const certificateItems = computed(() => (props.certificates?.length ? props.certificates : fallbackCertificates));
@@ -65,7 +65,7 @@ const selectedCertificate = ref<Certificate | null>(null);
                     </div>
                     <div class="mt-6 flex min-h-[320px] items-center justify-center rounded-[8px] bg-black p-3">
                         <img
-                            :src="selectedCertificate.image || '/images/certificate/Certificate_1.jpg'"
+                            :src="selectedCertificate.image || '/images/certificate/Certificate_1.webp'"
                             :alt="selectedCertificate.title"
                             class="max-h-[70vh] max-w-full object-contain"
                         />

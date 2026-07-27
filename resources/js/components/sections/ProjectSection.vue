@@ -38,7 +38,7 @@ const fallbackProjects = [
             'A static preview for an e-learning idea focused on course discovery, learner progress, admin-friendly content management, and practical dashboard flows that can later be connected to Laravel APIs.',
         category: 'IT',
         stack: ['Laravel', 'Vue', 'MySQL'],
-        thumbnail: '/images/project/project_1_1.png',
+        thumbnail: '/images/project/project_1_1.webp',
     },
     {
         type: 'IT',
@@ -48,7 +48,7 @@ const fallbackProjects = [
             'A mentoring platform concept for arranging sessions, protecting user areas with token authentication, and separating frontend interaction from Laravel API responsibilities.',
         category: 'IT',
         stack: ['Laravel API', 'Vue', 'JWT'],
-        thumbnail: '/images/project/project_1_2.png',
+        thumbnail: '/images/project/project_1_2.webp',
     },
     {
         type: 'IT',
@@ -58,7 +58,7 @@ const fallbackProjects = [
             'A CMS-style dashboard concept with structured content editing, admin navigation, reusable layout sections, and a path toward CRUD-backed Laravel modules.',
         category: 'IT',
         stack: ['Laravel', 'AdminLTE'],
-        thumbnail: '/images/project/project_2_1.png',
+        thumbnail: '/images/project/project_2_1.webp',
     },
     {
         type: 'NON_IT',
@@ -67,7 +67,7 @@ const fallbackProjects = [
         detail:
             'A writing collection concept for cultural notes, local history, observation, and reflective interpretation outside software development work.',
         category: 'Non-IT',
-        thumbnail: '/images/component/Pattern.jpg',
+        thumbnail: '/images/component/Pattern.webp',
     },
     {
         type: 'NON_IT',
@@ -76,7 +76,7 @@ const fallbackProjects = [
         detail:
             'A personal archive for reflection pieces, opinions, and essays that help preserve thought process, growth, and everyday lessons.',
         category: 'Non-IT',
-        thumbnail: '/images/project/project_2_2.png',
+        thumbnail: '/images/project/project_2_2.webp',
     },
     {
         type: 'NON_IT',
@@ -85,7 +85,7 @@ const fallbackProjects = [
         detail:
             'A documentation concept for organization activities, event memories, visual records, and collaborative experience outside formal project work.',
         category: 'Non-IT',
-        thumbnail: '/images/component/Profile.png',
+        thumbnail: '/images/component/Profile.webp',
     },
 ] satisfies Project[];
 
@@ -95,7 +95,7 @@ const selectedImages = computed(() => {
     if (!selectedProject.value) return [];
     const values = selectedProject.value.images?.length
         ? selectedProject.value.images
-        : [selectedProject.value.thumbnail || '/images/project/project_1_1.png'];
+        : [selectedProject.value.thumbnail || '/images/project/project_1_1.webp'];
     return [...new Set(values.filter(Boolean))];
 });
 

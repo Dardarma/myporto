@@ -54,7 +54,7 @@ const greetingParts = computed(() => {
 const heroSlogan = computed(() => props.profile?.heroSlogan || "It's ALL ABOUT E'MEEEH");
 const sloganLines = computed(() => heroSlogan.value.split(' '));
 const profileName = computed(() => props.profile?.name || 'Muhammad Rizki Darmawan');
-const profileImage = computed(() => props.profile?.profileImage || '/images/component/Profile.png');
+const profileImage = computed(() => props.profile?.profileImage || '/images/component/Profile.webp');
 
 onMounted(() => {
     updateViewport();
