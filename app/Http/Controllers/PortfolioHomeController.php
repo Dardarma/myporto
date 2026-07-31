@@ -27,6 +27,7 @@ class PortfolioHomeController extends Controller
                 'heroSlogan' => $profile->hero_slogan,
                 'profileImage' => $profile->profile_image,
                 'email' => $profile->email,
+                'phone' => $profile->phone,
                 'instagramUrl' => $profile->instagram_url,
                 'linkedinUrl' => $profile->linkedin_url,
                 'githubUrl' => $profile->github_url,

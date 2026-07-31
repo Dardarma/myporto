@@ -21,6 +21,7 @@ defineProps<{
         heroSlogan?: string | null;
         profileImage?: string | null;
         email?: string | null;
+        phone?: string | null;
         instagramUrl?: string | null;
         linkedinUrl?: string | null;
         githubUrl?: string | null;
@@ -108,7 +109,7 @@ onUnmounted(() => {
 <template>
     <Head title="Muhammad Rizki Darmawan" />
 
-    <div class="portfolio-shell min-h-screen bg-portfolio text-portfolio-text">
+    <div class="portfolio-shell bg-portfolio text-portfolio-text min-h-screen">
         <div class="relative z-10">
             <Navbar />
             <main>

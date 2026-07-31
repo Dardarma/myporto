@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
             'hero_slogan' => "It's ALL ABOUT E'MEEEH",
             'profile_image' => '/images/component/Profile.webp',
             'email' => 'hello@example.com',
+            'phone' => null,
             'instagram_url' => '#',
             'linkedin_url' => '#',
             'github_url' => '#',
