@@ -20,7 +20,7 @@ declare module 'vite/client' {
     }
 }
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
+const appName = import.meta.env.VITE_APP_NAME || 'Rizki Darmawan at the Service';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
