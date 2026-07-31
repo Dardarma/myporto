@@ -202,8 +202,6 @@ class PortfolioAdminController extends Controller
     {
         $config = $this->resourceConfig($resource);
 
-        abort_if($this->isSingleton($config), 403);
-
         /** @var class-string<Model> $model */
         $model = $config['model'];
         $record = $model::query()->findOrFail($id);
