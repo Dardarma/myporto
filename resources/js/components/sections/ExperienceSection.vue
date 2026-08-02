@@ -39,7 +39,7 @@ const formatPeriod = (experience: (typeof fallbackExperiences)[number]) => {
 </script>
 
 <template>
-    <section id="experience" class="portfolio-section pattern-parallax scroll-mt-24 lg:min-h-[75vh] lg:py-28">
+    <section id="experience" class="portfolio-section pattern-parallax scroll-mt-5 lg:min-h-[60vh] lg:py-5">
         <div class="scroll-reveal mx-auto w-full max-w-7xl">
             <SectionTitle title="Experience" align="center" />
 

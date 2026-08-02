@@ -41,7 +41,7 @@ const activeTab = computed(() => tabs.value.find((tab) => tab.key === activeKey.
 </script>
 
 <template>
-    <section id="about" class="pattern-fade-from-dark portfolio-section pattern-parallax scroll-mt-24 lg:min-h-screen lg:py-32">
+    <section id="about" class="pattern-fade-from-dark portfolio-section pattern-parallax scroll-mt-10 lg:min-h-screen lg:py-32">
         <div class="scroll-reveal mx-auto w-full max-w-7xl">
             <div class="grid gap-6 lg:grid-cols-[360px_1fr]">
                 <div class="flex gap-4 overflow-x-auto lg:flex-col lg:gap-7 lg:overflow-visible">

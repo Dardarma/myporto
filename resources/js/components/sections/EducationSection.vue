@@ -41,14 +41,15 @@ const yearRange = (education: (typeof fallbackEducations)[number]) => {
 </script>
 
 <template>
-    <section id="education" class="portfolio-section pattern-parallax scroll-mt-24 lg:min-h-[85vh] lg:py-32">
+
+    <section id="education" class="portfolio-section pattern-parallax scroll-mt-10 lg:min-h-[85vh] lg:py-32">
         <div class="scroll-reveal mx-auto w-full max-w-7xl">
             <SectionTitle title="EDUCATE" :subtitle="subtitle" align="center" />
 
             <article
                 v-for="education in educations"
                 :key="`${education.degree}-${education.institution}`"
-                class="mx-auto grid max-w-4xl overflow-hidden rounded-[8px] border border-white/10 bg-[rgba(70,70,78,0.9)] shadow-2xl shadow-black/25 backdrop-blur md:grid-cols-[0.9fr_1.1fr]"
+                class="mx-auto grid max-w-4xl overflow-hidden rounded-[8px] border border-white/10 bg-[rgba(70,70,78,0.9)] shadow-2xl shadow-black/25 backdrop-blur md:grid-cols-[0.9fr_1.1fr] my-4"
             >
                 <div class="min-h-[260px] bg-[#d9d9d9] p-3 md:min-h-[360px]">
                     <img
